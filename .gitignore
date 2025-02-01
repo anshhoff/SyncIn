@@ -1,0 +1,6 @@
+echo ".DS_Store
+DerivedData/
+Pods/
+xcuserdata/
+xcworkspace/
+*.xcuserstate" >> .gitignore
