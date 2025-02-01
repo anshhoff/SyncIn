@@ -1,4 +1,4 @@
-//
+///
 //  HomeView.swift
 //  SyncIN
 //
@@ -6,15 +6,15 @@
 //
 import SwiftUI
 import SwiftUICore
-
+import FirebaseFirestore
 import SwiftUI
 
 struct HomeView: View {
     // Sample users sorted by distance (closest first)
     let users: [User] = [
-        User(name: "Maya Patel", bio: "Student", hobbies: "Cooking, Reading", likes: "Spicy Food, Mystery Novels", dislikes: "Cold Weather", photo: "https://example.com/photo1.jpg", distance: 1500),
-        User(name: "Sarah Miller", bio: "Software Developer", hobbies: "Photography, Traveling", likes: "Sunsets, Beaches", dislikes: "Crowded Places", photo: "https://example.com/photo2.jpg", distance: 2000),
-        User(name: "Alex Chen", bio: "Digital Artist", hobbies: "Sketching, Gaming", likes: "Sci-fi Movies, Pizza", dislikes: "Early Mornings", photo: "https://example.com/photo3.jpg", distance: 5000)
+        User(name: "Maya Patel", bio: "Student", hobbies: "Cooking, Reading", likes: "Spicy Food, Mystery Novels", dislikes: "Cold Weather", photo: "https://example.com/photo1.jpg", distance: 150),
+        User(name: "Sarah Miller", bio: "Software Developer", hobbies: "Photography, Traveling", likes: "Sunsets, Beaches", dislikes: "Crowded Places", photo: "https://example.com/photo2.jpg", distance: 200),
+        User(name: "Alex Chen", bio: "Digital Artist", hobbies: "Sketching, Gaming", likes: "Sci-fi Movies, Pizza", dislikes: "Early Mornings", photo: "https://example.com/photo3.jpg", distance: 500)
     ].sorted { $0.distance < $1.distance } // Sort by distance
 
     @State private var selectedUser: User?

@@ -9,11 +9,12 @@ import Firebase
 
 struct EditProfileView: View {
     @Binding var isEditingProfile: Bool
-    @State private var name: String = "John Doe"
-    @State private var email: String = "johndoe@example.com"
-    @State private var bio: String = "iOS Developer | Coffee Lover ☕ | Swift Enthusiast"
-    @State private var hobbies: String = "Coding, Reading, Traveling" // Added hobbies field
+    @State private var name: String = ""
+    @State private var email: String = ""
+    @State private var bio: String = ""
+    @State private var hobbies: String = "" // Added hobbies field
     @State private var isKeyboardVisible = false // Track keyboard visibility
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack(spacing: 20) {
@@ -44,19 +45,19 @@ struct EditProfileView: View {
 
             // Form Fields
             VStack(spacing: 16) {
-                TextField("Name", text: $name)
+                TextField("Enter your name", text: $name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
 
-                TextField("Email", text: $email)
+                TextField("Enter your email", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
 
-                TextField("Bio", text: $bio)
+                TextField("Enter your bio", text: $bio)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
                 
-                TextField("Hobbies", text: $hobbies) // Added hobbies field
+                TextField("Enter your hobbies", text: $hobbies) // Added hobbies field
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
             }
@@ -82,7 +83,7 @@ struct EditProfileView: View {
             .padding(.bottom, isKeyboardVisible ? 20 : 40) // Move up when keyboard appears
             
             Button(action: {
-                isEditingProfile = false
+                presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Cancel")
                     .foregroundColor(.red)
@@ -121,7 +122,7 @@ struct EditProfileView: View {
                 print("Error saving profile: \(error.localizedDescription)")
             } else {
                 print("Profile updated successfully")
-                isEditingProfile = false
+                presentationMode.wrappedValue.dismiss()
             }
         }
     }
@@ -145,4 +146,6 @@ struct EditProfileView: View {
 #Preview {
     EditProfileView(isEditingProfile: .constant(true))
 }
+
+
 

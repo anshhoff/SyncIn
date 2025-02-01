@@ -127,4 +127,3 @@ struct ChatRow: View {
 #Preview {
     ChatView()
 }
-
