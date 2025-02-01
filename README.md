@@ -1,7 +1,7 @@
 # SyncIn
 
 ## Overview
-Local Connect is an iOS application designed to bridge the gap between individuals within close proximity, enabling effortless interaction. The app identifies users within a predefined geofenced area, allowing them to connect based on shared interests, goals, or networking preferences. It provides a seamless user experience with a modern UI and integrates with Firebase for backend services.
+SyncIn is an application designed to bridge the gap between individuals within close proximity, enabling effortless interaction. The app identifies users within a predefined geofenced area, allowing them to connect based on shared interests, goals, or networking preferences. It provides a seamless user experience with a modern UI and integrates with Firebase for backend services.
 
 ## Features
 - Geofencing-based user discovery
@@ -18,8 +18,8 @@ Ensure you have the following installed:
 ### Steps
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/LocalConnect.git
-   cd LocalConnect
+   git clone https://github.com/anshhoff/SyncIn.git
+   cd SyncIn
    ```
 2. Install dependencies:
    ```sh
@@ -27,7 +27,7 @@ Ensure you have the following installed:
    ```
 3. Open the project in Xcode:
    ```sh
-   open LocalConnect.xcworkspace
+   open SyncIn.xcworkspace
    ```
 4. Ensure you have configured Firebase by adding your `GoogleService-Info.plist` file to the project.
 5. Build and run the app on a simulator or a connected device.
