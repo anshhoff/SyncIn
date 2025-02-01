@@ -3,4 +3,5 @@ DerivedData/
 Pods/
 xcuserdata/
 xcworkspace/
-*.xcuserstate" >> .gitignore
+*.xcuserstate
+build/" >> .gitignore
